@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "event_id": "f59e8867-a616-40a4-a147-d00c4c5ddb70",
+  "type": "scale.stable_net",
+  "site_id": "AND-01",
+  "station_id": "RCV-01",
+  "device_id": "SCALE-001-PLACEHOLDER",
+  "idempotency_key": "RCV-01-EXAMPLE-1",
+  "unit": "kg",
+  "gross": "24.100",
+  "tare": "0.680",
+  "net": "23.420",
+  "stable": true,
+  "occurred_at": "2026-10-11T10:00:00+05:00",
+  "roll_id": "R-26-000183",
+  "raw_packet_hash": "sha256:EXAMPLE_NOT_REAL",
+  "dry_run": true
+}

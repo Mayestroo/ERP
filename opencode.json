@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "read": "allow",
+    "edit": "allow",
+    "webfetch": "allow",
+    "bash": {
+      "*": "allow",
+      "sudo *": "deny",
+      "git push *": "deny",
+      "rm -rf *": "deny",
+      "docker system prune *": "deny",
+      "Remove-Item -Recurse *": "deny"
+    },
+    "external_directory": "deny"
+  }
+}

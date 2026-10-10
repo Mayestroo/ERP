@@ -1,0 +1,31 @@
+﻿ID,Name,GivenWhen,Expected,Area,Automated,Evidence,Result
+AT01,Supplier roles,"Supplier A cannot see Supplier B PO, ASN, price, Roll","API and UI access denied, no data leakage",SEC,NO,,NOT_RUN
+AT02,Supplier roll duplicate,Same supplier roll_ref or same ASN roll twice,"no duplicate accepted roll, trace event",DATA,NO,,NOT_RUN
+AT03,Receiving scale unstable,"Unstable measurement, missing tare, invalid calibration",no native Stock Ledger posting,DEVICE,NO,,NOT_RUN
+AT04,Supplier mismatch,"80 declared, 78 arrived, 1 wrong shade, 2 weight variances","partial/quarantine/claim, 4 qty fields retained",INBOUND,NO,,NOT_RUN
+AT05,Print fail,Printer unavailable after committed receipt,same stock qty; retry print only,DEVICE,NO,,NOT_RUN
+AT06,Offline replay,"8h offline, duplicate upload + clock skew",each event posted once or conflict queue,DEVICE,NO,,NOT_RUN
+AT07,Roll remnant,24.00 kg: 9.00 used +14.60 remnant +0.40 loss,"mass equals, new remnant lineage",CUT,NO,,NOT_RUN
+AT08,Mix-cut size colors,"5 sizes, 2 rolls of conflicting shades",policy check; bundle genealogy trace,MES,NO,,NOT_RUN
+AT09,Overproduction,Worker 2 scans same operation across split bundle,approved credited qty cannot exceed verified unique qty,PAY,NO,,NOT_RUN
+AT10,Rework,"Failed QC returned 2 stages, job repeated","not counted as new FG, pay per policy",QC,NO,,NOT_RUN
+AT11,Partner chain,"500 out, 400 transferred partner1→2, 480 in, 20 open","ownership,custody,service invoice audit",SUB,NO,,NOT_RUN
+AT12,Partner isolation,Partner B queries partner A id,"403/404, no partial info",SEC,NO,,NOT_RUN
+AT13,Two-pack,white+black pack mapped and wrong size scanned,"2-pack composition exact, block mismatch",PACK,NO,,NOT_RUN
+AT14,Double KIZ,Same regulated mark scanned on 2 units,hard block and audit; no fake legal creation,LABEL,NO,,NOT_RUN
+AT15,FBO discrepancy,"400 dispatched, 393 platform accepted","7 unresolved, no auto sales recognition",CHANNEL,NO,,NOT_RUN
+AT16,FBS cancellation,order cancel before and after handover,correct reservation/reversal states,CHANNEL,NO,,NOT_RUN
+AT17,Marketplace finance,"commission, logistics, ad, fine, return, FX",statement sums and GL reconcile,FIN,NO,,NOT_RUN
+AT18,Returns,"30 returns: 20 sellable, 5 rework, 5 scrap","stock by quality, COGS/claim entries",RET,NO,,NOT_RUN
+AT19,Inventory adjustment,Unapproved manual write or backdated count,"blocked, approved native reconciliation only",SEC,NO,,NOT_RUN
+AT20,Payroll rates,piece rate changed after old approved job,"old job rate fixed, no duplicate Hisob export",PAY,NO,,NOT_RUN
+AT21,Migration,"Excel import contains duplicate SKU, worker, opening stock","reject/quarantine duplicates, reconcile totals",DATA,NO,,NOT_RUN
+AT22,DB restore,restore backup into isolated environment,stock and GL totals plus sample docs match,OPS,NO,,NOT_RUN
+AT23,Period close,"late AP, WIP, FX and marketplace receivable",balanced close; blocked backdate per policy,FIN,NO,,NOT_RUN
+AT24,Supplied material,client-owned input used for inward service,no erroneous own-stock valuation,SUB,NO,,NOT_RUN
+AT25,Permission negative,Worker attempts approve high-value adjustment,"blocked, auditable",SEC,NO,,NOT_RUN
+AT26,Machine downtime,"equipment stops, stock parts issued, production capacity changed",accurate downtime and costs,MAINT,NO,,NOT_RUN
+AT27,Load test,200 workers concurrent operations; station bursts,"no duplicated posting, latency target to set",PERF,NO,,NOT_RUN
+AT28,Lost QR label,same roll relabelled by supervisor,"same physical roll id, print audit",DEVICE,NO,,NOT_RUN
+AT29,Mixed shipment,wrong SKU scanned into marketplace carton,block seal/dispatch,PACK,NO,,NOT_RUN
+AT30,Buy-sell ownership,customer-owned returned to owner and NOVDA-owned transfers,owner separated in all queries and entries,DATA,NO,,NOT_RUN

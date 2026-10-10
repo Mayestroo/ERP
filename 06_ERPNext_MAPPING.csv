@@ -1,0 +1,21 @@
+﻿Process,NativeERPNext,NovdaExtension,GateTest,Priority,FeatureVerified
+Partners/PO/ASN,"Supplier, Purchase Order","NOVDA ASN, Roll, Supplier Portal",PO/ASN/QR match,P0,PENDING_VERSION_TEST
+Incoming QC/receiving,"Purchase Receipt, Quality Inspection, Batch","Weigh event, discrepancy, quarantine/slot",Receipt & SLE reconcile,P0,PENDING_VERSION_TEST
+Warehouses/stock,"Warehouse, Stock Entry, Stock Ledger",Bin scan/putaway/remnant identity,No duplicate balances,P0,PENDING_VERSION_TEST
+BOM/PLM,"Item Variant, BOM, Work Order","Techpack revision, marker, size mix",WorkOrder pinned BOM,P0,PENDING_VERSION_TEST
+Cutting,"Work Order, Stock Entry","Cut ticket, Bundle, mass balance",Qty reconciliation,P0,PENDING_VERSION_TEST
+Sewing,"Job Card, Workstation","Operation evidence, station/line, WIP",No double operation,P0,PENDING_VERSION_TEST
+QC/rework,Quality Inspection,"Defect, rework routes, lineage",Quality gate,P0,PENDING_VERSION_TEST
+Subcontract outward,"Subcontracting Order/Receipt, Stock Entry","Handover, multi-leg tracking",Open WIP and invoice,P0,PENDING_VERSION_TEST
+Subcontract inward,Version-dependent inward subcontract,Customer-owned material workflow,Ownership check,P1,PENDING_VERSION_TEST
+Piecework,Employee/Payroll features if available,"Rate version, approved payroll events, Hisob",Wage close/duplicate,P0,PENDING_VERSION_TEST
+Finished and packing,"Item variant, Stock Entry","UnitPack, Carton, HU",Pack manifest and SKUs,P0,PENDING_VERSION_TEST
+Marketplace,"Sales Order/Delivery Note, integration API","Channel events, stock reservations, reconciliation",Orders not settlements,P0,PENDING_VERSION_TEST
+Marketplace finance,Sales Invoice/Journal/Payment Entry,"Statement parsing, fees & analytics",Statement to GL,P1,PENDING_VERSION_TEST
+B2B/export,"Quotation, Sales Order, Delivery Note, Invoice",Custom commercial compliance mapping,POD/AR check,P1,PENDING_VERSION_TEST
+Maintenance,Asset/Maintenance features,"Equipment QR, downtime scan",Asset parts issue,P1,PENDING_VERSION_TEST
+Accounts/close,"GL, Accounts, Cost Centers","Actual margin dashboards, variance",Trial balance,P1,PENDING_VERSION_TEST
+Marking,Item/Barcode,GTIN/KIZ external legal workflow,Compliance applicability,P1,PENDING_VERSION_TEST
+Device integration,ERP APIs,"Device Gateway, Print Outbox",Offline replay,P0,PENDING_VERSION_TEST
+Roles/security,"Frappe roles, user permissions","Partner isolation, sensitive approvals",Negative access tests,P0,PENDING_VERSION_TEST
+Observability/DR,Bench backup/migration,"Restore drill, trace IDs, alerts",Restore/checksum,P0,PENDING_VERSION_TEST

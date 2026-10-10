@@ -1,0 +1,46 @@
+﻿Entity,Owner,PrimaryKey,KeyFields,Invariant,Reviewed
+Company,ERPNext,company_id,"base_currency,sites",Company singleton per legal entity,NO
+Site/Warehouse/Bin,ERP+custom,location_id,"site,parent,type,status,capacity",bin cannot post into wrong warehouse,NO
+Party+contract,ERPNext,party_id,"role,tax_id,credit_terms,approved",partner tenant access,NO
+PurchaseOrder,ERPNext,po_id,"supplier,item,price,currency,qty,rev,status",approved PO for ASN,NO
+ASN,custom,asn_id,"po,partner,carrier,manifest,revision,state",no duplicate roll within ASN,NO
+HandlingUnit,custom,hu_id,"type,parent,asn,seal,status",hierarchy no cycles,NO
+FabricSpecification,custom,fabric_spec_id,"item,width,gsm,composition,limits,revision",approved revision,NO
+FabricLot,ERP batch+custom,lot_id,"supplier_lot,dye_lot,shade,spec",scope to item,NO
+Roll,custom,roll_id,"lot,item,asn,parent_roll,identity_state",globally unique immutable ID,NO
+RollMeasurement,custom evidence,weight_event_id,"scale,raw,tare,net,unit,stable,operator,time",append-only event,NO
+ScaleDevice,custom,device_id,"protocol,calibration_due,site,status",unverified calibrations block auto-post,NO
+ScanEvent,custom evidence,scan_event_id,"idempotency,code,actor,station,action,time",do not infer posting from scan,NO
+PrintJob,custom,print_job_id,"object,label_template,version,printer,status,reprint_reason",print after commit,NO
+ReceiptDiscrepancy,custom,case_id,"asn,roll,declared,measured,accepted,diff,reason",workflow/claim,NO
+QualityInspection,ERP+custom,inspection_id,"item,lot,roll,tests,result,photo,actor",release must be approved,NO
+PurchaseReceipt,ERPNext,receipt_id,"supplier,po,accepted,rejected,warehouse",native stock ledger,NO
+StockLedgerEntry,ERPNext,sle_id,"item,batch,qty,valuation,warehouse",authoritative stock,NO
+BOM/TechpackRevision,ERP+custom,revision_id,"model,size_mix,materials,op_route,effective_date",no retroactive edits,NO
+Model/SizeColorSKU,ERPNext item,sku_id,"model,size,color,pack,GTIN,channel refs",external uniqueness,NO
+DemandPlan,custom+ERP,plan_id,"source,period,sku,qty,priority",preserve source snapshot,NO
+WorkOrder,ERPNext,wo_id,"bom,qty,status,wip_warehouse",native manufacturing,NO
+LayPlan/CutTicket,custom,cut_id,"wo,marker,rolls,lay_count,size_mix",mass balance,NO
+CutBundle,custom,bundle_id,"cut_id,sku,part_qty,location,state",physical vs ERP serial-batch distinction,NO
+GenealogyEdge,custom,edge_id,"source_object,target_object,quantity,uom,reason",no impossible double consumption,NO
+OperationRoute,custom,route_id,"techpack_revision,steps,parallel_rules",versioned sequence,NO
+OperationEvidence,custom,operation_event_id,"worker,bundle,step,qty,quality,actor",verification before pay,NO
+JobCard,ERPNext,job_card_id,"wo,workstation,operation,actual_time,qty",where native applies,NO
+ReworkTicket,custom,rework_id,"original_defect,stage,decision,qty,owner",not double pay,NO
+QCDefect,custom,defect_id,"object,code,root_cause,disposition,photo",trace root cause,NO
+SubcontractTask,ERP+custom,sub_id,"supplier,work,rate_revision,manifest,qty",ownership custody separate,NO
+ContractorHandover,custom,handover_id,"from_party,to_party,objects,signoff,qty",two-party evidence,NO
+PieceRate,custom,rate_id,"model,operation,skill,rate,currency,effective_date",immutable approved rate revision,NO
+PayrollEvidence,custom,payroll_event_id,"employee,operation_event,approved_qty,rate_id,amount",no independent payment,NO
+Attendance,Hisob adapter,attendance_id,"employee,shift,start,end,source",do not duplicate attendance pay,NO
+FinishedBatch,ERP batch+custom,fg_batch_id,"sku,wo,release,quality_state",not sellable until release,NO
+UnitPack/Kit,custom+ERP,pack_id,"sku,qty,contents,label_refs",2-pack exact composition,NO
+Carton,custom,carton_id,"manifest,qty,sku_mix,seal,weight",not a sellable SKU,NO
+Shipment,ERP+custom,shipment_id,"channel,cartons,carrier,proof,status",external acceptance reconciled,NO
+MarketplaceMapping,custom,map_id,"channel,sku,external_ids,warehouse,pack_size",unique per channel account,NO
+MarketplaceEvent,integration inbox,external_event_id,"type,payload_hash,status,occurred_at",idempotent import,NO
+SettlementLine,custom+ERP posting,settlement_id,"statement,sku,fee_type,currency,amount",reconcile totals to GL,NO
+ReturnCase,custom+ERP,return_id,"source,lot,sku,qty,qc,disposition",quarantine first,NO
+AssetMaintenance,ERP+custom,maintenance_id,"asset,fault,parts,downtime,resolution",downtime attribution,NO
+OutboxEvent,custom technical,event_id,"type,payload,attempts,ack,status",durable retries,NO
+AuditDecision,custom,decision_id,"actor,role,object,before_after,reason,timestamp",append-only audit,NO

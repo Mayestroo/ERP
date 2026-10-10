@@ -1,0 +1,12 @@
+flowchart TB
+ Partner[Suppliers / contractors] --> Portal[Partner Portal]
+ Operator[Operators scanners scales printers] --> Edge[Local Device Gateway]
+ Edge --> Commands[Validated Frappe commands]
+ Portal --> Commands
+ MES[Cutting sewing QC packing] --> Commands
+ Commands --> Custom[novda_textile DocTypes + Workflows]
+ Custom --> Native[ERPNext submitted documents]
+ Native --> Stock[(Stock Ledger)]
+ Native --> GL[(General Ledger)]
+ Custom --> Outbox[(Event inbox/outbox)]
+ Outbox --> Channels[WB Uzum Hisob]

@@ -1,0 +1,41 @@
+﻿ID,Domain,PriorCoverage,Gap,RequiredArtifact,Owner,Verification,Priority
+G01,Mahsulot hayotiy sikli (PLM),YO‘Q,"Modellar, lekalo/CAD, gradatsiya, namuna, fit, GSM, texkartani tasdiqlash, revision, ECO",Model → sample → approved techpack flow,Product development,UNVERIFIED,P1
+G02,SKU/master data boshqaruvi,QISMAN,"Model-color-size variant generatori; GTIN/MXIK/TN VED; nomlash, aktiv/arxiv, dubllarni to‘xtatish","Master data schema, approval va validation",Master data,UNVERIFIED,P0
+G03,Sotuv/demand/B2B buyurtma,YO‘Q,"Ulgurji buyurtma, shartnoma, narx/chegirma, kredit limiti, mijoz rezervi, qaytish",Quote → order → shipment → AR flow,Sales,UNVERIFIED,P1
+G04,Talab va MRP,QISMAN,"WB/Uzum prognozi, reorder point, min-max, material yetkazish muddati, size-color mix, material shortage",Demand → supply → capacity plan,Planning,UNVERIFIED,P1
+G05,Supplier sourcing va xarid,QISMAN,"RFQ, alternativ takliflar, approved vendor, avans, xarid narxi, PO revision/cancel, claim, debit note",Procure-to-pay + supplier scoring,Procurement,UNVERIFIED,P0
+G06,Mato texnik spetsifikatsiyasi,QISMAN,"Eni, GSM, lot/shade, tarkib, knitting/dyeing process, kenglik va rang tolerantlari",Fabric spec + roll measurement schema,Quality,UNVERIFIED,P1
+G07,Fabrika tashqarisidagi mato ishlab chiqarish,QISMAN,"Xom ip→trikotaj→bo‘yash→quritish/finish, agar supplier NOVDA materialini olsa: ownership, yield, loss",Supplier/contract manufacturing variants,Supplier development,UNVERIFIED,P1
+G08,Yetkazib beruvchi portal/ASN,QISMAN,"Vendor-auth, one-to-many PO, vendor QR alias, offline label, PO partial, ASN amendment, label tamper, inbound dispute",Supplier state machine + API contract,Procurement,UNVERIFIED,P0
+G09,Transport/darvoza,QISMAN,"Transport buyurtma, avtomobil/plomba, haydovchi, gross truck weighing (kerak bo‘lsa), POD, ortish/kamomad",Transport/yard handover flow,Logistics,UNVERIFIED,P1
+G10,Rulon tortish va metrologiya,QISMAN,"Gross/tare/net, stable threshold, zeroing, tare presets, kalibrovka sertifikati, manual override, qurilmadan raw evidence",Device protocol + metrology SOP,Receiving,UNVERIFIED,P0
+G11,Kirish OTK/laboratoriya,QISMAN,"Rang/shade band, 4-point fabric faults (mos bo‘lsa), shrinkage, GSM, eni, defect map, sampling, supplier claim","Inbound QC forms, thresholds, disputes",QC,UNVERIFIED,P0
+G12,Xomashyo ombori,QISMAN,"Bin yo‘nalish, roll-slot, FIFO/quality block, reservation, mixed storage, offcut, unlocated stock, inventarizatsiya","Physical location, picking, movement models",Warehouse,UNVERIFIED,P0
+G13,UOM va weight conversion,QISMAN,"kg ↔ metr konversiyasi har rulonga mos; width/GSM; qty precision, moisture tolerances, gross/net, waste mass balance",UOM policy + unit tests,Engineering,UNVERIFIED,P0
+G14,Texkarta/BOM/rassenka,QISMAN,"Accessories BOM, consumption norms, fason/model per size, rate version, cost revision va approval",Product tech card revision lifecycle,Engineering,UNVERIFIED,P0
+G15,Bichish/nastil,QISMAN,"Marker/lekalo, layer count, roll mixing/shade, cutting ticket, recut, cutting defects, piece count, cutter productivity",Lay plan → bundles → remnant flow,Cutting,UNVERIFIED,P0
+G16,Tikuv jarayoni,QISMAN,"Operation precedence, worker/station assignment, line balancing, partial jobs, parallel work, bottleneck, WIP ageing",Shop-floor MES state machine,Sewing,UNVERIFIED,P0
+G17,Sifat/brak/rework,QISMAN,"Defect taxonomy, root cause, worker vs material attribution, AQL if applicable, return-to-stage, scraps & recut","QC, rework and write-off policies",QC,UNVERIFIED,P0
+G18,Finishing va komplekt,QISMAN,"Dazmol, logo/print/embroidery, lastik/insert, to‘plam 2-pack, relabel, assortment substitution",Finishing + bundle/kit model,Finishing,UNVERIFIED,P1
+G19,Subcontract outward,QISMAN,"2+ pudratchi ketma-ketligi, perishables/consumables, partial, reject, service price changes, loss liability, invoices",Multi-leg subcontract trace + settlement,Outsource,UNVERIFIED,P0
+G20,Subcontract inward/B2B ishlab chiqarish,YO‘Q,"Xaridor o‘z matosini beradi, NOVDA tikib qaytaradi, customer-owned qty, service invoicing",Customer-provided material process,B2B,UNVERIFIED,P1
+G21,Ishchi/HR/smena/maosh,QISMAN,"Kunbay/ishbay/oylik; absenteeism, overtime, avans/ushlanma, ish rejimi, 200+ worker roles, payroll source-of-truth",Hisob interface + wage policy + UAT,HR,UNVERIFIED,P0
+G22,Uskuna texnik xizmati,QISMAN,"Preventive schedule, spare parts, downtime, maintenance cost, utilization, preventive work",Equipment maintenance plan,Maintenance,UNVERIFIED,P1
+G23,Tayyor mahsulot ombori,QISMAN,"FG QC release, stock aging, rack/bin, picking policy, 2-pack BOM, qadoq tarkibi, mixed cartons, damaged/repack","FG state, carton/pallet manifest",FG Warehouse,UNVERIFIED,P0
+G24,Markirovka va yorliqlar,QISMAN,"Internal QR vs WB barcode vs GTIN vs Russia KIZ, active/printed/applied status, duplicate KIZ prevention, aggregation",Label taxonomy + compliance mapping,Compliance,UNVERIFIED,P1
+G25,Marketplace FBO/FBS,QISMAN,"Marketplace omborlari va virtual stock, API orders, region, shipment acceptance, claims, late statuses, advertising",Channel-specific lifecycle/reconciliation,Marketplace,UNVERIFIED,P0
+G26,Marketplace moliyasi,YO‘Q,"SPP, komissiya, logistika, saqlash, reklama, jarima, chegirma, soliq, return loss, haftalik hisobot va to‘lov",Unit economics by SKU/channel/period,Finance,UNVERIFIED,P1
+G27,Ulgurji eksport va logistika,YO‘Q,"Domestic B2B, bojxona, yuk hujjati, broker/cargo, valyuta, Incoterms ehtiyojga qarab",Sales-to-cash and export flow,Sales,UNVERIFIED,P1
+G28,Qaytim/claim/recall,QISMAN,"Supplierga qaytarish, B2B claim, defective returns, batch recall, customer refund, loss attribution",Return & claim taxonomy,QC,UNVERIFIED,P1
+G29,Tannarx va accounting,QISMAN,"Actual material, labor, overhead, subcontract, packaging, logistics, scrap/rework, production variance, FX, period close",Cost policy & GL/account mapping,Finance,UNVERIFIED,P0
+G30,Soliq va e-hujjatlar,YO‘Q,"UZ MXIK/EHF/e-imzo talablarini tekshirish, eksport/reexport, tanlangan yurisdiksiya bo‘yicha markirovka",Compliance requirements register,Compliance,UNVERIFIED,P1
+G31,Pul oqimi va kontragent hisoblari,YO‘Q,"Supplier avans, qarzdorlik, bank, kassa, valyuta, receivables, cost-center budget, cash forecast","Procure-to-pay, order-to-cash accounting",Finance,UNVERIFIED,P1
+G32,Axborot xavfsizligi,QISMAN,"Partner row-level isolation, MFA, secrets, retention, device identity, fraud, incident response, sign-off matrix",Threat model + roles matrix,IT,UNVERIFIED,P0
+G33,Backup va DR,YO‘Q,"PostgreSQL/MariaDB (tanlangan stackga mos) backup, PITR feasibility, backup restore test, RPO/RTO, degraded mode",Disaster recovery drill/report,IT,UNVERIFIED,P0
+G34,Offline/sync/device gateway,QISMAN,"Idempotency, conflict, queue storage, clock drift, power loss, firmware, scanner wedge mode, printer retry, read-after-write",Edge contract + 15+ fault-injection tests,IT,UNVERIFIED,P0
+G35,Boshlang‘ich ma’lumotlar migratsiyasi,YO‘Q,"Excel rassenka, Hisob employee, eski qoldiq, eski shipmentlar, SKU/GTIN, ochiq buyurtmalar, rollout","Import templates, cleansing & reconciliation",Data,UNVERIFIED,P0
+G36,KPI/reports/alerts,QISMAN,"Target/KPI owner, financial closure, aging WIP, real-time line, BOM variance, shrinkage, supplier, fulfillment quality",KPI catalog with formula/refresh/owner,Management,UNVERIFIED,P1
+G37,Multi-site va access governance,QISMAN,"Sex, ombor, partner, seller cabinet, filial/company, currency, group data visibility",Org/site model + permission tests,IT,UNVERIFIED,P1
+G38,Notifications/approvals,QISMAN,"Exception alert, shortage, machine down, SLA escalation, abnormal loss, two-person approval",Escalation decision table,Management,UNVERIFIED,P1
+G39,Huquqiy hujjat va audit,QISMAN,"Tasdiqlovchi, imzo, foto/dalolatnoma, correction/reverse, sign-off and retention periods",Document lifecycle and audit schema,Compliance,UNVERIFIED,P1
+G40,Platforma ekspluatatsiyasi,YO‘Q,"Deployment, staging/prod separation, monitoring, CI/CD, migrations, uptime, operator training",Operational runbooks and SLAs,IT,UNVERIFIED,P0

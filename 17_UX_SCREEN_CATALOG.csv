@@ -1,0 +1,27 @@
+﻿ID,Role,Screen,MustShow,PrimaryAction,NegativeTest,Wireframe,Acceptance
+S01,Director,Command center,"KPIs: order backlog, WIP, open contractor balance, sales margin",read-only drill-down,No unauthorized changes,TO_CREATE,NOT_TESTED
+S02,Procurement,Purchase planner,PO vs received/payable/ASN,approve PO,Price revision protected,TO_CREATE,NOT_TESTED
+S03,Supplier,My purchase orders,Own PO lines and spec revisions,acknowledge,Other supplier inaccessible,TO_CREATE,NOT_TESTED
+S04,Supplier,Create roll,"Weigh/declare lot/roll, QR preview",declare and print,Duplicate roll ref blocked,TO_CREATE,NOT_TESTED
+S05,Supplier,Dispatch ASN,Manifest/transport seal,dispatch,No undeclared unit,TO_CREATE,NOT_TESTED
+S06,Gate guard,Arrival station,Truck/ASN/HU scan,arrived,Unexpected sealed ASN flagged,TO_CREATE,NOT_TESTED
+S07,Receiving,Scale terminal,QR live gross/tare/net + delta,receive to quarantine,Unstable weight blocked,TO_CREATE,NOT_TESTED
+S08,QC,Fabric lab inspection,"GSM, width, shade, shrinkage, defect sampling",release/claim,Quarantine persists,TO_CREATE,NOT_TESTED
+S09,Warehouse,Putaway/pick,Bin+Roll scan and qty,move/issue,Wrong bin blocked,TO_CREATE,NOT_TESTED
+S10,Planner,Production board,Model/size-color capacity BOM rev,WO release,Material shortage flag,TO_CREATE,NOT_TESTED
+S11,Cutting,Cut lay screen,"Roll, marker, layers, input/output/remnant",close lay,Mass balance mismatch flagged,TO_CREATE,NOT_TESTED
+S12,Cutting,Bundle label,Size/color/cut batch bundle QR,print,No duplicate ID,TO_CREATE,NOT_TESTED
+S13,Line supervisor,Line WIP board,"Bundles by stage, bottlenecks",assign/rework,Precedence validates,TO_CREATE,NOT_TESTED
+S14,Sewing worker,Operation station,Worker badge + bundle + step + qty,submit,Cannot over-credit,TO_CREATE,NOT_TESTED
+S15,QC,Sewing/final QC,"Defect root cause, disposition",approve/rework/scrap,No sellable without release,TO_CREATE,NOT_TESTED
+S16,Outsource planner,Partner dispatch,"Handover manifest, WIP, rates",issue,Double handover blocked,TO_CREATE,NOT_TESTED
+S17,Contractor,My tasks,"Only own WIP, progress, return",ack/finish,Other contractor hidden,TO_CREATE,NOT_TESTED
+S18,Packing,Unit + carton packing,"SKU/pack/KIZ/barcode, carton manifest",seal carton,Wrong size and duplicate mark blocked,TO_CREATE,NOT_TESTED
+S19,FG Warehouse,Fulfillment pick,Order/FBO shipment bin and carton,handover,Reservation and qty match,TO_CREATE,NOT_TESTED
+S20,Marketplace manager,Channel cockpit,"Orders, sync errors, FBO/FBS, statements",reconcile,API external qty distinct,TO_CREATE,NOT_TESTED
+S21,Returns QC,Return intake,"Return scan, QC, disposition",release/scrap,Quarantine before sellable,TO_CREATE,NOT_TESTED
+S22,HR/payroll,Piecework approval,"Operation count, attendance, rates, export",approve/export,Rate changes non-retroactive,TO_CREATE,NOT_TESTED
+S23,Finance,Cost & settlement,"Actual cost, payable, AR, bank reconciliation",period close,Drill-down GL links,TO_CREATE,NOT_TESTED
+S24,Maintenance,Machine QR,"Fault, work ticket, parts",repair/release,Downtime traced,TO_CREATE,NOT_TESTED
+S25,IT/Admin,Device health,"Scale calibration, print queue, offline backlog",retry printer,No double posting,TO_CREATE,NOT_TESTED
+S26,Auditor,Audit/correction,Source event → ERP document → correction chain,approve exception,No deletion of ledger,TO_CREATE,NOT_TESTED

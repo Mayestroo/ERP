@@ -1,0 +1,14 @@
+{
+  "label_type": "NOVDA_ROLL_INTERNAL",
+  "version": 1,
+  "roll_id": "R-26-000183",
+  "qr_payload": "NV1:R:R-26-000183:EXAMPLECHECK",
+  "display_fields": [
+    "fabric",
+    "color",
+    "lot",
+    "roll_id"
+  ],
+  "net_kg_label_is_snapshot_only": true,
+  "example_only": true
+}
